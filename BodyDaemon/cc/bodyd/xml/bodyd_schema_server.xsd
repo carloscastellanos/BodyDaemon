@@ -1,0 +1,40 @@
+<?xml version="1.0"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">  	<xsd:annotation>  	  	<xsd:documentation xml:lang="en">  	  	  	XML Schema for BodyDaemon messages sent from BodyDaemon server to client  	  	</xsd:documentation>  	</xsd:annotation>  	  	  	  	  	  	  	  	  	  	  	   	<xsd:element name="bodydml">        <xsd:complexType>            <xsd:choice minOccurs="1" maxOccurs="unbounded">                <xsd:element name="history">
+                    <xsd:complexType>                        <xsd:sequence minOccurs="1" maxOccurs="unbounded">                            <xsd:element name="data">                                <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="unbounded">                                        <xsd:element name="sensor">                                            <xsd:complexType>
+                                                <xsd:sequence minOccurs="1" maxOccurs="1">
+                                                    <xsd:element name="serverprop">
+                                                        <xsd:complexType>
+                                                            <xsd:simpleContent>
+                                                                <xsd:extension base="xsd:string">
+                                                                    <xsd:attribute name="type" type="xsd:string"/>
+                                                                </xsd:extension>
+                                                            </xsd:simpleContent>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                                <xsd:attribute name="type" type="xsd:string"/>
+                                                <xsd:attribute name="value" type="xsd:int"/>                                            </xsd:complexType>                                        </xsd:element>
+                                    </xsd:sequence>                                    <xsd:attribute name="time" type="timestamp"/>                                </xsd:complexType>                            </xsd:element>                        </xsd:sequence>                    </xsd:complexType>
+                </xsd:element>                <xsd:element name="livedata">  	  	  	  	  	<xsd:complexType>
+                        <xsd:sequence minOccurs="1" maxOccurs="unbounded">  	  	  	  	  	  	  	<xsd:element name="sensor">
+                                <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="1">
+                                        <xsd:element name="serverprop">
+                                            <xsd:complexType>
+                                                <xsd:simpleContent>
+                                                    <xsd:extension base="xsd:string">
+                                                        <xsd:attribute name="type" type="xsd:string"/>
+                                                    </xsd:extension>
+                                                </xsd:simpleContent>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="type" type="xsd:string"/>
+                                    <xsd:attribute name="value" type="xsd:int"/>  	  	  	  	  	  	  	  	</xsd:complexType>  	  	  	  	  	  	  	</xsd:element>  	  	  	  	  	  	</xsd:sequence>  	  	  	  	  	</xsd:complexType>
+  	  	      </xsd:element>
+            </xsd:choice>
+            <xsd:attribute name="status" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>	  	  	 
+  	  	  	  	   	<xsd:simpleType name="timestamp">  	  	<xsd:restriction base="xsd:string">  	  	  	<xsd:pattern value="(([0-9]{1,2}-[a-zA-Z]{3}-[0-9]{2}[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2})|(\*)|(today)|(yesterday)|(sunday)|(monday)|(tuesday)|(wednesday)|(thursday)|(friday)|(saturday))((\+|-)[0-9]+(d|h|m|s))?" />  	  	</xsd:restriction>  	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Library/Java/Extensions/xerces-2_9_0.1/xml-apis.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/Extensions/xerces-2_9_0.1/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/Extensions/xerces-2_9_0.1/resolver.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Library/Java/Extensions/averages/lib/Averages.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
